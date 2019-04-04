@@ -18,8 +18,24 @@ public class Song {
 
     public String getInfo() {
 
-        String songOutput = "Title: " + songName + " | Artist: " + songArtist + "  | Album: " + songAlbum + " | Genre: " + songGenre;
+        String songOutput = "Title: " + songName + " | Artist: " + songArtist + " | Album: " + songAlbum + " | Genre: " + songGenre;
         return songOutput;
+    }
+
+    public String getSongName() {
+        return songName;
+    }
+
+    public String getSongArtist() {
+        return songArtist;
+    }
+
+    public String getSongAlbum() {
+        return songAlbum;
+    }
+
+    public String getSongGenre() {
+        return songGenre;
     }
 
 }

@@ -9,13 +9,12 @@ import org.jsoup.select.Elements;
 
 public class Scraper {
 
-    private final Controller finalCntl;
+    //private final Controller finalCntl;
     private final ArrayList<Song> songList;
-    private ArrayList<String> textList;
+    private ArrayList<String> textList; //I will not make final yet since it will need to not be final in the future. 
 
-    public Scraper(Controller finalCntl) {
+    public Scraper() {
 
-        this.finalCntl = finalCntl;
         songList = new ArrayList<>();
         textList = new ArrayList<>();
         textListBuilder(textList);
@@ -52,21 +51,21 @@ public class Scraper {
             textList.remove(textList.size() - 1);
         }
     }
-    
+
     public static void songListBuilder(ArrayList<String> textList, ArrayList<Song> songList) {
         int textListSize = textList.size();
         String[] tempArray = new String[4];
-        for (int i = 0; i < textListSize; i=i+5) {
+        for (int i = 0; i < textListSize; i = i + 5) {
             tempArray[0] = textList.get(i);
             tempArray[2] = textList.get(i + 1);
             tempArray[1] = textList.get(i + 2);
             tempArray[3] = textList.get(i + 3);
-            
+
             Song tempSong = new Song(tempArray);
             songList.add(tempSong);
         }
     }
-    
+
     public ArrayList<Song> getSongs() {
 
         return songList;
